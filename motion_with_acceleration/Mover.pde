@@ -12,8 +12,13 @@ class Mover {
     }
     
     void update() {
-      velocity.add(acceleration);
-      velocity.limit(topspeed);
+      if (keyCode == UP) {
+        velocity.add(acceleration);
+        velocity.limit(topspeed);
+      } else if (keyCode == DOWN) {
+        velocity.sub(acceleration);
+        velocity.limit(topspeed);
+      }
       location.add(velocity);
     }
     
