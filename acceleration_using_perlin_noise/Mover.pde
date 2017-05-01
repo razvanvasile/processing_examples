@@ -15,8 +15,8 @@ class Mover {
     }
     
     void update() {
-      acceleration.x = map(noise(tx), 0, 1, 0, topspeed);
-      acceleration.y = map(noise(ty), 0, 1, 0, topspeed);
+      acceleration.x = map(noise(tx), 0, 1, -topspeed, topspeed);
+      acceleration.y = map(noise(ty), 0, 1, -topspeed, topspeed);
       velocity.add(acceleration);
       velocity.limit(topspeed);
       location.add(velocity);
