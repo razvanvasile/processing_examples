@@ -30,13 +30,16 @@ class Mover {
   }
   
   void checkEdges() {
+    PVector invisible_force = new PVector(-1.0, 0);
     if(location.x > width) {
       location.x = width;
       velocity.x *= -1;
-    } else if (location.x < 0) {
+      applyForce(invisible_force);
+  } else if (location.x < 0) {
       location.x = 0;
       velocity.x *= -1;
-    }
+      applyForce(invisible_force);
+  }
     
     if(location.y > height) {
       location.y = height;
